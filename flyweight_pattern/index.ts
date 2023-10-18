@@ -60,11 +60,15 @@ class FlyWeightFactory<T> {
 
 const gun = new Gun("ak_47", .47, 16);
 const gun2 = new Gun("ak_117", .47, 17);
+const gun3 = new Gun("ak_47", .48, 17);
 
-const gunFlyWeightFactory = new FlyWeightFactory<Gun>([gun, gun2]);
-console.log(gunFlyWeightFactory.getFlyWeights());
+const gunFlyWeightFactory = new FlyWeightFactory<Gun>([gun, gun2, gun3]);
 console.log(gunFlyWeightFactory.getFlyWeight(gun));
 
 const flyWeight = new FlyWeight<Gun>(gun);
 
 console.log(flyWeight.serializated(gun));
+console.log(flyWeight.serializated(gun2));
+console.log(flyWeight.serializated(gun3));
+console.log(gunFlyWeightFactory.getFlyWeights());
+
